@@ -71,37 +71,12 @@ void executeFile(const string& filename) {
     file.close();
 }
 
-void startREPL() {
-    string line;
-    cout << "Welcome to Toy Language Interpreter (REPL)" << endl;
-    cout << "Type 'exit' to quit." << endl;
-
-    while (true) {
-        cout << "> ";
-        getline(cin, line);
-
-        if (line == "exit") {
-            break;
-        }
-
-        try {
-            vector<Token> tokens = tokenize(line);
-            vector<ASTNode*> ast = parse(tokens);
-            evaluate(ast);
-        }
-        catch(const exception& e) {
-            cerr << e.what() << endl;
-        }
-        
-    }
-}
-
 int main(int argc, char* argv[]) {
     if (argc == 2) {
         string filename = argv[1];
         executeFile(filename);
     } else {
-        startREPL();
+        cerr << "No toy file found" << endl;
     }
 
     return 0;
