@@ -37,6 +37,10 @@ vector<Token> tokenize(const string& text) {
             }
             if (current_word == "log") {
                 tokens.push_back({TokenType::LOG, current_word});
+            } else if (current_word == "while") {
+                tokens.push_back({TokenType::WHILE, current_word});
+            } else if (current_word == "for") {
+                tokens.push_back({TokenType::FOR, current_word});
             } else if (current_word == "if") {
                 tokens.push_back({TokenType::IF, current_word});
             } else if (current_word == "else") {
@@ -80,12 +84,22 @@ vector<Token> tokenize(const string& text) {
         } else {
             switch (current_char) {
                 case '+':
-                    tokens.push_back({TokenType::ADD, string(1, current_char)});
-                    idx++;
+                    if (text[idx+1] == '+') {
+                        tokens.push_back({TokenType::INCREMENT, "++"});
+                        idx += 2;
+                    } else {
+                        tokens.push_back({TokenType::ADD, string(1, current_char)});
+                        idx++;
+                    }
                     break;
                 case '-':
-                    tokens.push_back({TokenType::MINUS, string(1, current_char)});
-                    idx++;
+                    if (text[idx+1] == '-') {
+                        tokens.push_back({TokenType::DECREMENT, "--"});
+                        idx += 2;
+                    } else {
+                        tokens.push_back({TokenType::MINUS, string(1, current_char)});
+                        idx++;
+                    }
                     break;
                 case '*':
                     tokens.push_back({TokenType::STAR, string(1, current_char)});

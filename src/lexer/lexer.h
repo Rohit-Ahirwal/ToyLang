@@ -24,13 +24,17 @@ enum class TokenType {
     LTHAN,
     GTHAN_EQUAL,
     LTHAN_EQUAL,
+    INCREMENT,
+    DECREMENT,
     LOG,
     IDENTIFIER,
     ASSIGNMENT,
     NEWLINE,
     IF,
     ELSE,
-    ELIF
+    ELIF,
+    WHILE,
+    FOR
 };
 
 struct Token {

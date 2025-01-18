@@ -24,16 +24,20 @@ ASTNode* createNode(TokenType type, const string& value);
 
 vector<ASTNode*> parse(const vector<Token>& tokens);
 
-ASTNode* parseExpression(const vector<Token>& tokens, size_t& idx, size_t& lineNumber);
+ASTNode* parseExpression(const vector<Token>& tokens, size_t& idx);
 
-ASTNode* parseStatements(const vector<Token>& tokens, size_t& idx, size_t& lineNumber);
+ASTNode* parseStatements(const vector<Token>& tokens, size_t& idx);
 
-ASTNode* parseLog(const vector<Token>& tokens, size_t& idx, size_t& lineNumber);
+ASTNode* parseLog(const vector<Token>& tokens, size_t& idx);
 
-ASTNode* parseAssignment(const vector<Token>& tokens, size_t& idx, size_t& lineNumber);
+ASTNode* parseAssignment(const vector<Token>& tokens, size_t& idx);
 
-ASTNode* parseCondition(const vector<Token>& tokens, size_t& idx, size_t& lineNumber);
+ASTNode* parseCondition(const vector<Token>& tokens, size_t& idx);
 
-void expect(const vector<Token>& tokens, size_t& idx, TokenType expectedType, string TypeInString, size_t& lineNumber);
+ASTNode* parseWhileLoop(const vector<Token>& tokens, size_t& idx);
+
+ASTNode* parseForLoop(const vector<Token>& tokens, size_t& idx);
+
+void expect(const vector<Token>& tokens, size_t& idx, TokenType expectedType, string TypeInString);
 
 #endif

@@ -20,6 +20,12 @@ void evaluate(const vector<ASTNode*>& nodes) {
             case TokenType::ASSIGNMENT:
                 evaluateAssignment(node);
                 break;
+            case TokenType::WHILE:
+                evaluateWhileLoop(node);
+                break;
+            case TokenType::FOR:
+                evaluateForLoop(node);
+                break;
             case TokenType::IF:
                 evaluateCondition(node);
                 break;
@@ -28,6 +34,30 @@ void evaluate(const vector<ASTNode*>& nodes) {
         }
     }
     symbolTable.exitScope();
+}
+
+void evaluateBody(const vector<ASTNode*>& nodes) {
+    for (ASTNode* node : nodes) {
+        switch (node->type) {
+            case TokenType::LOG:
+                evaluateLog(node);
+                break;
+            case TokenType::ASSIGNMENT:
+                evaluateAssignment(node);
+                break;
+            case TokenType::WHILE:
+                evaluateWhileLoop(node);
+                break;
+            case TokenType::FOR:
+                evaluateForLoop(node);
+                break;
+            case TokenType::IF:
+                evaluateCondition(node);
+                break;
+            default:
+                throw runtime_error("Invalid syntax found");
+        }
+    }
 }
 
 void evaluateLog(const ASTNode* node) {
@@ -50,7 +80,9 @@ void evaluateCondition(const ASTNode* node) {
     bool conditionResult = get<bool>(evaluateExpression(node->condition));
 
     if (conditionResult) {
-        evaluate(node->body);
+        symbolTable.enterScope(); // Enter if scope
+        evaluateBody(node->body);
+        symbolTable.exitScope(); // Exit if scope
     } else if (!conditionResult && !node->elifBlocks.empty()) {
         for (auto elif: node->elifBlocks) {
             evaluateCondition(elif);
@@ -58,8 +90,56 @@ void evaluateCondition(const ASTNode* node) {
     }
     
     if (!conditionResult && node->elseBlock != nullptr) {
-        evaluate(node->elseBlock->body);
+        symbolTable.enterScope(); // Enter else scope
+        evaluateBody(node->elseBlock->body);
+        symbolTable.exitScope(); // Exit else scope
     }
+}
+
+void evaluateWhileLoop(const ASTNode* node) {
+
+    symbolTable.enterScope(); // Enter while scope
+    while (get<bool>(evaluateExpression(node->condition))) {
+        evaluateBody(node->body);
+    }
+    symbolTable.exitScope(); // Exit while scope
+}
+
+void evaluateForLoop(const ASTNode* node) {
+    evaluateAssignment(node->left);
+
+    symbolTable.enterScope();
+    while (get<bool>(evaluateExpression(node->condition))) {
+        evaluateBody(node->body);
+
+        evaluateAdjustment(node->right);
+    }
+    symbolTable.exitScope();
+}
+
+void evaluateAdjustment(const ASTNode* node) {
+    ValueType value = evaluateExpression(node->left);
+    bool isIncrement = (node->type == TokenType::INCREMENT);
+    bool isDecrement = (node->type == TokenType::DECREMENT);
+
+    if (holds_alternative<int>(value)) {
+        evaluateNumericAdjustment(node->left->value, get<int>(value), isIncrement, isDecrement);
+    } else if (holds_alternative<float>(value)) {
+        evaluateNumericAdjustment(node->left->value, get<float>(value), isIncrement, isDecrement);
+    } else {
+        throw runtime_error("Syntax Error: '++' or '--' used with an invalid data type");
+    }
+}
+
+template <typename T>
+void evaluateNumericAdjustment(const string& varName, T currentValue, bool isIncrement, bool isDecrement) {
+    T adjustedValue = currentValue + (isIncrement ? 1 : (isDecrement ? -1 : 0));
+
+    ASTNode* adjustedNode = createNode(TokenType::ASSIGNMENT, "=");
+    adjustedNode->left = createNode(TokenType::IDENTIFIER, varName);
+    adjustedNode->right = createNode(TokenType::NUMBER, to_string(adjustedValue));
+    
+    evaluateAssignment(adjustedNode);
 }
 
 ValueType evaluateExpression(const ASTNode* node) {
