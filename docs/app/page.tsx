@@ -28,7 +28,7 @@ export default function Home() {
   const [output, setOutput] = useState<string | null>(null);
 
   const executeCode = async () => {
-    const response = await fetch('http://localhost:3000/api/execute', {
+    const response = await fetch('/api/execute', {
       method: 'POST',
       body: JSON.stringify({ code: code }),
       headers: {
