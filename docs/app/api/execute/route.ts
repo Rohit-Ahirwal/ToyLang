@@ -14,10 +14,11 @@ export async function POST(request: Request): Promise<Response> {
             return NextResponse.json({ error: 'Code is required', status: 400 });
         }
 
-        const filePath = path.join(process.cwd(), 'temp.toy'); // Temporary file path
+        const filePath = path.join('/tmp', 'temp.toy'); // Temporary file path
         const execPath = path.join(process.cwd(), 'public', 'ToyLang'); // Absolute path to the executable
 
         // Write the code to a temporary file
+        await fs.mkdir(path.dirname(filePath), { recursive: true });
         await fs.writeFile(filePath, code, 'utf8');
 
         // Execute the ToyLang executable
@@ -32,6 +33,7 @@ export async function POST(request: Request): Promise<Response> {
 
         return NextResponse.json({ output: stdout });
     } catch (err) {
+        console.error(err);
         return NextResponse.json({
             error: 'Failed to execute code',
             details: (err as Error).message,
