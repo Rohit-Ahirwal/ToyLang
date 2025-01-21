@@ -2,7 +2,7 @@
 import ToyEditor from "@/components/ToyEditor";
 import { Github } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const sampleCode = `
 log("Hello World");
