@@ -15,7 +15,7 @@ export async function POST(request: Request): Promise<Response> {
         }
 
         const filePath = path.join(process.cwd(), 'temp.toy'); // Temporary file path
-        const execPath = path.join(process.cwd(), 'public', 'ToyLang.exe'); // Absolute path to the executable
+        const execPath = path.join(process.cwd(), 'public', 'ToyLang'); // Absolute path to the executable
 
         // Write the code to a temporary file
         await fs.writeFile(filePath, code, 'utf8');
