@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "ToyLang",
@@ -18,6 +19,7 @@ export default function RootLayout({
         className={`antialiased`}
       >
         {children}
+        <Footer />
       </body>
     </html>
   );
