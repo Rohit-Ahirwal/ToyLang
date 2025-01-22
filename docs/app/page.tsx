@@ -45,6 +45,7 @@ export default function Home() {
     }
   }
 
+
   const clearCode = () => {
     setCode('');
   }
