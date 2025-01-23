@@ -38,7 +38,7 @@ const Download: React.FC = () => {
         <div className="bg-white/10 isolate ring-white/5 ring-1 backdrop-blur-md aspect-video rounded-xl shadow-xl p-8 text-center sm:col-span-2 sm:justify-self-center">
           <h2 className="text-3xl font-semibold mb-4">MacOs</h2>
           <Image src="/os/mac.webp" width={100} height={100} alt="Linux Logo" className='mx-auto my-8' />
-          <p className="text-lg mb-6">We're working on the Mac version. Stay tuned!</p>
+          <p className="text-lg mb-6">We&apos;re working on the Mac version. Stay tuned!</p>
         </div>
       </section>
 
