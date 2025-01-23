@@ -4,7 +4,7 @@ Name "ToyLang"
 OutFile "ToyLangInstaller.exe"
 InstallDir "$PROGRAMFILES\ToyLang"
 
-!define MUI_ICON "..\asset\ToyLang.ico"
+!define MUI_ICON "..\..\asset\ToyLang.ico"
 !insertmacro MUI_PAGE_WELCOME
 !insertmacro MUI_PAGE_LICENSE "..\LICENSE"
 !insertmacro MUI_PAGE_DIRECTORY
@@ -16,7 +16,7 @@ InstallDir "$PROGRAMFILES\ToyLang"
 Section "Install ToyLang" 
     SetOutPath "$INSTDIR"
 
-    File "..\build\Release\ToyLang.exe"
+    File "..\..\build\Release\ToyLang.exe"
     WriteRegStr HKLM "SYSTEM\CurrentControlSet\Control\Session Manager\Environment" "Path" "$INSTDIR;$%PATH%"
     System::Call 'Kernel32::SetEnvironmentVariableA(t, t) i("Path", "$INSTDIR;$%PATH%").r0'
 

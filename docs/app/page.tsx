@@ -80,7 +80,7 @@ export default function Home() {
   return (
     <div className="p-4">
       <div className="w-full flex flex-col items-center min-h-screen text-center">
-        <h1 className="text-6xl mt-40 mb-10 text-heading sm:text-9xl sm:mt-60 sm:mb-16">ToyLang</h1>
+        <h1 className="text-6xl mt-40 mb-10 text-heading sm:text-9xl sm:mt-60 sm:mb-16 font-[Amazone]">ToyLang</h1>
         <span>A Toy programming language written in C++</span>
         <div className="my-12">
           <Link href={`${process.env.NEXT_PUBLIC_REPO_URL}`} target="_blank">
@@ -96,7 +96,7 @@ export default function Home() {
               Playground
             </button>
           </Link>
-          <Link href={`${process.env.NEXT_PUBLIC_REPO_URL}`} target="_blank">
+          <Link href={"/download"}>
             <button className="btn-secondary">
               Download
             </button>

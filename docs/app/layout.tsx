@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Poppins } from "next/font/google";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -7,6 +8,12 @@ export const metadata: Metadata = {
   description: "A Toy programming language written in C++",
   icons: "ToyLang.ico"
 };
+
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: "100"
+});
 
 export default function RootLayout({
   children,
@@ -16,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`antialiased`}
+        className={`${poppins.variable} antialiased`}
       >
         {children}
         <Footer />
