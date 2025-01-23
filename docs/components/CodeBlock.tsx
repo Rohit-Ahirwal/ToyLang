@@ -18,7 +18,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ code, language }) => {
             Prism.highlightAll();
             Prism.plugins.toolbar.registerButton('copy-to-clipboard', {
                 text: 'Copy',
-                onClick: function (env: { element: any; }) {
+                onClick: function (env: { element: HTMLElement; }) {
                     Prism.plugins.copyToClipboard.copy(env.element);
                 }
             });
