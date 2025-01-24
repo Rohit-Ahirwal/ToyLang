@@ -2,7 +2,7 @@
   "name": "toylang",
   "displayName": "ToyLang",
   "description": "Add ToyLang support in vscode",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "engines": {
     "vscode": "^1.96.0"
   },
