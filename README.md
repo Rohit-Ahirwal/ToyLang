@@ -45,3 +45,62 @@ This is how it looks with the extension
 
 ### After
 ![highlighted code](https://github.com/user-attachments/assets/e4f0fa81-27c0-417d-a7a9-c709e70eca2e)
+
+## Documentation
+
+ToyLang is a dynamically typed programming language, designed for practice and educational use, and implemented in C++.
+
+### Variables
+Easily assign values to variables with statements like.
+
+```
+a = 10;
+```
+
+### Types
+ToyLang supports Number, String and Boolean etc. all these like other language.
+
+```
+a = 10;
+b = "Hello World!";
+c = true;
+```
+
+### Built-ins
+You can use built-in log keyword to print anything to console.
+
+```
+log("Hello World!");
+```
+
+### Conditionals
+ToyLang supports a simple if-elif-else construct to handle conditional logic. The if block executes when the condition is true, while the elif blocks can be used to check additional conditions in sequence. If none of the above conditions are true, the else block will execute, providing a default action when all conditions fail. This allows for clear and easy branching of program logic based on different conditions.
+
+```
+if (a > b) {
+  log("a is greater than a");
+} elif (a < b) {
+  log("b is greater than a");
+} else {
+  log("b is equal to a");
+}
+```
+
+### For Loop
+ToyLang provides a for loop for iterating over a specified range of values. It is ideal for situations where the number of iterations is known beforehand. You can define the start, condition, and step of the loop, making it easy to run repetitive tasks a set number of times.
+
+```
+for (i = 0; i < 10; i++) {
+  log(i);
+}
+```
+
+### While Loop
+The while loop in ToyLang runs as long as a given condition is true. This loop is useful for situations where the number of iterations is not predetermined and the loop continues until a specific condition becomes false. It provides flexibility for running tasks based on dynamic conditions.
+
+```
+while (i < 10) {
+  log(i);
+  i = i + 1;
+}
+```
