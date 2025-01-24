@@ -27,6 +27,10 @@
         "extensions": [
           ".toy"
         ],
+        "icon": {
+          "light": "./icons/ToyLang.ico",
+          "dark": "./icons/ToyLang.ico"
+        },
         "configuration": "./language-configuration.json"
       }
     ],
@@ -41,12 +45,6 @@
       {
         "language": "toy",
         "path": "./snippets/ToyLang.json"
-      }
-    ],
-    "iconThemes": [
-      {
-        "id": "toylang-icon-theme",
-        "path": "./icon-theme.json"
       }
     ],
     "commands": [
