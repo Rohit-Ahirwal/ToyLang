@@ -1,0 +1,13 @@
+{
+    "iconDefinitions": {
+        "ToyLangIcon": {
+            "iconPath": "./icons/ToyLang.ico"
+        }
+    },
+    "fileExtensions": {
+        "toy": "ToyLangIcon"
+    },
+    "languageIds": {
+        "ToyLang": "ToyLang"
+    }
+}

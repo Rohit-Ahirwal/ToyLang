@@ -1,0 +1,76 @@
+{
+  "name": "toylang",
+  "displayName": "ToyLang",
+  "description": "Add ToyLang support in vscode",
+  "version": "1.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "main": "./extension.js",
+  "categories": [
+    "Programming Languages"
+  ],
+  "icon": "./icons/ToyLang.png",
+  "publisher": "RohitAhirwal",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rohit-Ahirwal/ToyLang"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "toy",
+        "aliases": [
+          "ToyLang",
+          "toy"
+        ],
+        "extensions": [
+          ".toy"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "toy",
+        "scopeName": "source.toy",
+        "path": "./syntaxes/toy.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "toy",
+        "path": "./snippets/ToyLang.json"
+      }
+    ],
+    "iconThemes": [
+      {
+        "id": "toylang-icon-theme",
+        "path": "./icon-theme.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "ToyLang.runFile",
+        "title": "Run Toy File",
+        "icon": {
+          "light": "./icons/run-light.svg",
+          "dark": "./icons/run-dark.svg"
+        }
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "when": "resourceLangId == toy",
+          "command": "ToyLang.runFile",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "@types/node": "^22.10.10",
+    "@types/vscode": "^1.96.0"
+  }
+}

@@ -1,0 +1,50 @@
+{
+    "Print Statement": {
+        "prefix": "log",
+        "body": [
+            "log(\"$1\")"
+        ],
+        "description": "Insert a print statement"
+    },
+    "If Statement": {
+        "prefix": "if",
+        "body": [
+            "if ($1) {",
+            "\t$2",
+            "}"
+        ],
+        "description": "Insert an if statement"
+    },
+    "For Loop": {
+        "prefix": "for",
+        "body": [
+            "for (i = 0; i < $1; i++) {",
+            "\t$2",
+            "}"
+        ],
+        "description": "Insert a for loop"
+    },
+    "While Loop": {
+        "prefix": "while",
+        "body": [
+            "while ($1) {",
+            "\t$2",
+            "}"
+        ],
+        "description": "Insert a while loop"
+    },
+    "True": {
+        "prefix": "true",
+        "body": [
+            "true"
+        ],
+        "description": "Insert the boolean value true"
+    },
+    "False": {
+        "prefix": "false",
+        "body": [
+            "false"
+        ],
+        "description": "Insert the boolean value false"
+    }
+}
