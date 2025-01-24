@@ -12,6 +12,10 @@ const Download: React.FC = () => {
         <p className="text-lg mb-8">Available for Linux and Windows now!</p>
       </section>
 
+      <div className='bg-white/10 isolate ring-white/5 ring-1 backdrop-blur-md rounded-xl shadow-xl p-4 text-center mx-auto w-fit'>
+        <span><b className='text-red-600'>NOTE: </b>Make sure to install <Link href={"https://marketplace.visualstudio.com/items?itemName=RohitAhirwal.toylang"} className='text-heading underline'>ToyLang Extension</Link> if you are using vscode as an IDE</span>
+      </div>
+
       {/* Main Download Section */}
       <section className="container mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Linux Download Section */}
