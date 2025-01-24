@@ -32,11 +32,11 @@ This language is interpreted, meaning it’s parsed and evaluated line-by-line. 
 
 ## Download
 
-You can simply download **ToyLang** from our [website]("https://toylang-docs.vercel.app/").
+You can simply download **ToyLang** from our [website](https://toylang-docs.vercel.app/).
 
 ## Usage
 
-After downloading it if you are using vscode make sure you have installed [ToyLang Extension in Vscode]("https://marketplace.visualstudio.com/items?itemName=RohitAhirwal.toylang"), This extension will enable the syntax highlights and auto completion for **ToyLang** in vscode.
+After downloading it if you are using vscode make sure you have installed [ToyLang Extension in Vscode](https://marketplace.visualstudio.com/items?itemName=RohitAhirwal.toylang), This extension will enable the syntax highlights and auto completion for **ToyLang** in vscode.
 
 This how it looks with extension
 
