@@ -3,3 +3,4 @@
 /extension/extension_tests
 node_modules
 yarn.lock
+*.vsix
