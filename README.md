@@ -53,14 +53,14 @@ ToyLang is a dynamically typed programming language, designed for practice and e
 ### Variables
 Easily assign values to variables with statements like.
 
-```
+```python
 a = 10;
 ```
 
 ### Types
 ToyLang supports Number, String and Boolean etc. all these like other language.
 
-```
+```python
 a = 10;
 b = "Hello World!";
 c = true;
@@ -69,14 +69,14 @@ c = true;
 ### Built-ins
 You can use built-in log keyword to print anything to console.
 
-```
+```javascript
 log("Hello World!");
 ```
 
 ### Conditionals
 ToyLang supports a simple if-elif-else construct to handle conditional logic. The if block executes when the condition is true, while the elif blocks can be used to check additional conditions in sequence. If none of the above conditions are true, the else block will execute, providing a default action when all conditions fail. This allows for clear and easy branching of program logic based on different conditions.
 
-```
+```javascript
 if (a > b) {
   log("a is greater than a");
 } elif (a < b) {
@@ -89,7 +89,7 @@ if (a > b) {
 ### For Loop
 ToyLang provides a for loop for iterating over a specified range of values. It is ideal for situations where the number of iterations is known beforehand. You can define the start, condition, and step of the loop, making it easy to run repetitive tasks a set number of times.
 
-```
+```javascript
 for (i = 0; i < 10; i++) {
   log(i);
 }
@@ -98,7 +98,7 @@ for (i = 0; i < 10; i++) {
 ### While Loop
 The while loop in ToyLang runs as long as a given condition is true. This loop is useful for situations where the number of iterations is not predetermined and the loop continues until a specific condition becomes false. It provides flexibility for running tasks based on dynamic conditions.
 
-```
+```javascript
 while (i < 10) {
   log(i);
   i = i + 1;
