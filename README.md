@@ -4,7 +4,7 @@
 
 <p align="center">This is the official repository for <b>Toy Language.</b></p>
 
-Welcome to the **ToyLang**! This is a simple, yet fun, programming language designed for learning and experimentation. It includes essential programming constructs and serves as a perfect project for those wanting to understand the fundamentals of building a custom language. 
+Welcome to the **ToyLang**! This is a simple, fun programming language designed for learning and experimentation. It includes essential programming constructs and is a perfect project for those wanting to understand the fundamentals of building a custom language. 
 
 This language features core constructs like variable assignment, condition management, loops, console logging, and basic arithmetic operations.
 
@@ -14,11 +14,11 @@ This language features core constructs like variable assignment, condition manag
 
 ## Features 🚀
 
-ToyLang covers all basic features of a programming language which are sufficient to understand and buld a programming language from scratch.
+ToyLang covers all the basic features of a programming language which are sufficient to understand and build a programming language from scratch.
 
 - **Variable Assignment**: Support for basic variable assignments (`a = 10;`).
-- **Condition Management**: `if`, `else` and `elif` statements to handle conditional logic.
-- **Loops**: `while` and `for` loop to create repetitive tasks.
+- **Condition Management**: `if`, `else`, and `elif` statements to handle conditional logic.
+- **Loops**: `while` and `for` loops to create repetitive tasks.
 - **Console Logging**: Built-in `log()` function to output to the console.
 - **Arithmetic Operations**: Addition, subtraction, multiplication, and division.
   
@@ -38,9 +38,10 @@ You can simply download **ToyLang** from our [website](https://toylang-docs.verc
 
 After downloading it if you are using vscode make sure you have installed [ToyLang Extension in Vscode](https://marketplace.visualstudio.com/items?itemName=RohitAhirwal.toylang), This extension will enable the syntax highlights and auto completion for **ToyLang** in vscode.
 
-This how it looks with extension
+This is how it looks with the extension
 
 ### Before
-
+![simple code](https://github.com/user-attachments/assets/46b77997-7f4a-4de1-b188-ee0a123f2e71)
 
 ### After
+![highlighted code](https://github.com/user-attachments/assets/e4f0fa81-27c0-417d-a7a9-c709e70eca2e)
